@@ -1,0 +1,29 @@
+<!doctype html>
+<html dir="ltr" lang="en-us">
+  <head>
+    <title>Form Basics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body>
+	<main>
+		<p>< <a href="additionalFormElementTypes.html">Back to form</a></p>
+
+		<h2>Success!</h2>
+		<h4>You submitted the following information...</h4>
+		<p id="data"></p>
+		
+		<script>
+			const resultsList = document.getElementById('data')
+			new URLSearchParams(window.location.search).forEach((value,name) => {
+				resultsList.append(`${name}: ${value}`)
+				resultsList.append(document.createElement('br'))
+				resultsList.append(document.createElement('br'))
+			})
+		</script>
+
+  </main>
+  </body>
+</html>
